@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Universal.Singletons;
 
 namespace NAMESPACENAME.Gameplay
@@ -8,6 +9,8 @@ namespace NAMESPACENAME.Gameplay
         [Header("Set Values")]
         [SerializeField] Transform pot;
         [SerializeField] float loseHeight;
+
+        public Action PotFalled;
 
         //Unity Events
         private void Start()
@@ -38,8 +41,7 @@ namespace NAMESPACENAME.Gameplay
         {
             if (pot.position.y < loseHeight)
             {
-                Debug.Log("You lost");
-                Debug.Break();
+                PotFalled?.Invoke();
             }
         }
     }

@@ -8,6 +8,7 @@ namespace NAMESPACENAME.Gameplay
         enum GameplayScreens {  inGame, pause, gameOver, resetGame}
 
         [Header("Set Values")]
+        [SerializeField] GameplayManager manager;
         [SerializeField] GameObject inGameUI;
         [SerializeField] GameObject pauseUI;
         [SerializeField] GameObject gameOverUI;
@@ -16,6 +17,22 @@ namespace NAMESPACENAME.Gameplay
         [SerializeField] GameplayScreens currentState = GameplayScreens.inGame;
 
         //Unity Events
+        private void Start()
+        {
+            //If manager wasn't asigned, get it
+            if (manager == null)
+            {
+                manager = GameplayManager.Get();
+            }
+
+            //Link action
+            manager.PotFalled += OnPotFalled;
+        }
+        private void OnDestroy()
+        {
+            //Unlink action
+            manager.PotFalled -= OnPotFalled;
+        }
 
         //Methods
         public void SetPause(bool pause)
@@ -23,6 +40,13 @@ namespace NAMESPACENAME.Gameplay
             GameManager.Get().SetPause(pause);
 
             currentState = pause ? GameplayScreens.pause : GameplayScreens.inGame;
+            SwitchUIStage();
+        }
+        void SetGameOver()
+        {
+            GameManager.Get().SetPause(true);
+
+            currentState = GameplayScreens.gameOver;
             SwitchUIStage();
         }
         void SwitchUIStage()
@@ -48,6 +72,12 @@ namespace NAMESPACENAME.Gameplay
                 default:
                     break;
             }
+        }
+
+        //Event receivers
+        void OnPotFalled()
+        {
+            SetGameOver();
         }
     }
 }
