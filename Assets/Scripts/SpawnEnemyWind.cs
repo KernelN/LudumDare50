@@ -34,7 +34,7 @@ namespace NAMESPACENAME.Gameplay
         Vector2 GetSpawnPointB()
         {
             y = Random.Range(-0.20f, 2.45f);
-            x = -7.45f;
+            x = -7.5f;
             Debug.Log(y);
 
             return new Vector2(x, y);
