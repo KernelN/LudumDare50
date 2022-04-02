@@ -7,7 +7,7 @@ namespace Universal.Highscore
     [Serializable]
     public class HighscoresTable { public List<Highscore> table; }
 
-    public class ScoreManager : MonoBehaviourSingleton<ScoreManager>
+    public class ScoreManager : Singletons.MonoBehaviourSingleton<ScoreManager>
     {
         public List<Highscore> highscores { get { return highscoreTable.table; } }
         public int score

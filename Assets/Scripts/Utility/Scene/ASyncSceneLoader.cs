@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 namespace Universal.SceneManaging
 {
-    public class ASyncSceneLoader : MonoBehaviourSingleton<ASyncSceneLoader>
+    public class ASyncSceneLoader : Singletons.MonoBehaviourSingleton<ASyncSceneLoader>
     {
         public float loadingProgress { get { return asyncLoad.progress; } }
         public bool sceneIsLoading { get { return !loadIsDone; } }

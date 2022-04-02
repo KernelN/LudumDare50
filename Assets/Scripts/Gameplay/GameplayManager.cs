@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using Universal.Singletons;
 
-namespace NAMESPACENAME
+namespace NAMESPACENAME.Gameplay
 {
-    public class GameplayManager : MonoBehaviour
+    public class GameplayManager : MonoBehaviourSingletonInScene<GameplayManager>
     {
         [Header("Set Values")]
         [SerializeField] Transform pot;

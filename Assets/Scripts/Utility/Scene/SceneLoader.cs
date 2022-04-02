@@ -9,8 +9,8 @@ namespace Universal.SceneManaging
             Scene currentScene = SceneManager.GetActiveScene();
             switch (currentScene.name)
             {
-                case "ProtoGameplay":
-                    return Scenes.proto;
+                case "Gameplay":
+                    return Scenes.gameplay;
                 case "Menu":
                     return Scenes.menu;
                 case "Highscores":
@@ -23,12 +23,12 @@ namespace Universal.SceneManaging
         }
         public static void LoadScene(Scenes sceneToLoad)
         {
-            string sceneName = "ProtoGameplay";
+            string sceneName = "ERROR";
 
             switch (sceneToLoad)
             {
-                case Scenes.proto:
-                    sceneName = "ProtoGameplay";
+                case Scenes.gameplay:
+                    sceneName = "Gameplay";
                     break;
                 case Scenes.menu:
                     sceneName = "Menu";

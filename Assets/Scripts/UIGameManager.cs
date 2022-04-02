@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ZombieStocks
+namespace NAMESPACENAME
 {
     public class UIGameManager : MonoBehaviour
     {
