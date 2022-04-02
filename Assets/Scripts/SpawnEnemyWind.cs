@@ -2,46 +2,69 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEnemyWind : MonoBehaviour
+namespace NAMESPACENAME.Gameplay
 {
-
-    public GameObject objectToSpawnA;
-    public GameObject objectToSpawnB;
-
-    float y;
-    float x;
-
-    void Start()
+   public class SpawnEnemyWind : MonoBehaviour
     {
-        InvokeRepeating("SpawnObjectA", 3, 1);
-        InvokeRepeating("SpawnObjectB", 3, 1);
-    }
 
-    Vector2 GetSpawnPointA()
-    {
-        y = Random.Range(1.30f, 3.50f);
-        x = 7.5f;
-        Debug.Log(y);
+        public GameObject objectToSpawnA;
+        public GameObject objectToSpawnB;
 
-        return new Vector2(x, y);
-    }
+        public float secondsBetweenSpawn;
+        public float elapsedTime = 0.0f;
 
-    Vector2 GetSpawnPointB()
-    {
-        y = Random.Range(1.30f, 3.50f);
-        x = -7.5f;
-        Debug.Log(y);
+        float y;
+        float x;
 
-        return new Vector2(x, y);
-    }
+        void Update()
+        {
+            SpawnObjectA();
+            SpawnObjectB();
+        }
 
-    void SpawnObjectA()
-    {
-        Instantiate(objectToSpawnA, GetSpawnPointA(), Quaternion.identity);
-    }
+        Vector2 GetSpawnPointA()
+        {
+            y = Random.Range(-0.20f,2.45f);
+            x = 7.5f;
+            Debug.Log(y);
 
-    void SpawnObjectB()
-    {
-        Instantiate(objectToSpawnB, GetSpawnPointB(), Quaternion.identity);
+            return new Vector2(x, y);
+        }
+
+        Vector2 GetSpawnPointB()
+        {
+            y = Random.Range(-0.20f, 2.45f);
+            x = -7.45f;
+            Debug.Log(y);
+
+            return new Vector2(x, y);
+        }
+
+        void SpawnObjectA()
+        {
+            elapsedTime += Time.deltaTime;
+
+            if(elapsedTime > secondsBetweenSpawn)
+            {
+                elapsedTime = 0;
+
+                Vector2 spawnPosition = GetSpawnPointA();
+                GameObject newEnemyWind = (GameObject)Instantiate(objectToSpawnA, spawnPosition, Quaternion.identity);
+            }
+        }
+
+        void SpawnObjectB()
+        {
+            elapsedTime += Time.deltaTime;
+
+            if (elapsedTime > secondsBetweenSpawn)
+            {
+                elapsedTime = 0;
+
+                Vector2 spawnPosition = GetSpawnPointB();
+                GameObject newEnemyWind = (GameObject)Instantiate(objectToSpawnB, spawnPosition, Quaternion.identity);
+            }
+        }
     }
 }
+
