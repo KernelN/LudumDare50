@@ -12,6 +12,7 @@ namespace NAMESPACENAME.Gameplay
 
         [Header("Runtime Values")]
         [SerializeField] float timer;
+        [SerializeField] bool gameOver;
 
         public Action PotFalled;
 
@@ -25,6 +26,8 @@ namespace NAMESPACENAME.Gameplay
         }
         private void Update()
         {
+            if (gameOver) return;
+            
             CheckPotHeight();
 
             UpdateTimer();
@@ -63,6 +66,7 @@ namespace NAMESPACENAME.Gameplay
         }
         void GameOver()
         {
+            gameOver = true;
             PotFalled?.Invoke();
         }
     }

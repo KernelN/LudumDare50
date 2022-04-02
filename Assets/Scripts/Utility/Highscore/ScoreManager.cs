@@ -17,9 +17,9 @@ namespace Universal.Highscore
             {
                 //Set new score between min-max
                 if (value < minScore)
-                    value = 0;
+                    value = minScore;
                 if (value > maxScore)
-                    value = 9999;
+                    value = maxScore;
 
                 ///Update score
                 currentScore.score = value;
