@@ -10,12 +10,15 @@ namespace NAMESPACENAME.Gameplay
         [SerializeField] Transform pot;
         [SerializeField] float loseHeight;
 
+        [Header("Runtime Values")]
+        [SerializeField] float timer;
+
         public Action PotFalled;
 
         //Unity Events
         private void Start()
         {
-            if(pot == null)
+            if (pot == null)
             {
                 pot = GameObject.FindGameObjectWithTag("Pot").transform;
             }
@@ -24,8 +27,10 @@ namespace NAMESPACENAME.Gameplay
         {
             CheckPotHeight();
 
+            UpdateTimer();
+
 #if UNITY_EDITOR
-            DrawGameOverHeight(); 
+            DrawGameOverHeight();
 #endif
         }
 
@@ -41,8 +46,24 @@ namespace NAMESPACENAME.Gameplay
         {
             if (pot.position.y < loseHeight)
             {
-                PotFalled?.Invoke();
+                GameOver();
             }
+        }
+        void UpdateTimer()
+        {
+            //Advance Timer
+            timer += Time.deltaTime;
+
+            //if timer bigger than 1, add 1 to score and reset timer
+            if (timer > 1)
+            {
+                timer -= 1;
+                Universal.Highscore.ScoreManager.Get().score += 1;
+            }
+        }
+        void GameOver()
+        {
+            PotFalled?.Invoke();
         }
     }
 }
