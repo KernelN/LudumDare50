@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace NAMESPACENAME.Gameplay
 {
@@ -10,6 +9,7 @@ namespace NAMESPACENAME.Gameplay
         [Header("Set Values")]
         [SerializeField] Transform windEmpty;
         [SerializeField] GameObject windPrefab;
+        [SerializeField] float maxWindHeight;
         [SerializeField] int maxWindsInGame;
         
         [Header("Runtime Values")]
@@ -20,6 +20,9 @@ namespace NAMESPACENAME.Gameplay
         //Unity Events
         private void Update()
         {
+            //Check TimeScale/Pause before asking for input -THIS IS VERY BERRETA, CHANGE LATER
+            if (Time.deltaTime == 0) return;
+            
             if (Input.GetMouseButtonDown(0))
             {
                 AddWindStartPos();
@@ -35,13 +38,23 @@ namespace NAMESPACENAME.Gameplay
         {
             //Get Start of Drag mouse position
             windStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log("Start Drag - " + windStart);
+
+            if(windStart.y > maxWindHeight)
+            {
+                windStart.y = maxWindHeight;
+            }
+            //Debug.Log("Start Drag - " + windStart);
         }
         void AddWindDirection()
         {
             //Get End of Drag mouse position
             windDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log("End Drag - " + windDirection);
+
+            if (windDirection.y > maxWindHeight)
+            {
+                windDirection.y = maxWindHeight;
+            }
+            //Debug.Log("End Drag - " + windDirection);
 
             //Calculate Direction
             windDirection -= windStart;
