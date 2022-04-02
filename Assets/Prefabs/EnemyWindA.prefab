@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 3092159260562394746}
   - component: {fileID: 3092159260562394744}
   - component: {fileID: 3092159260562394747}
+  - component: {fileID: 3227310281821805726}
   m_Layer: 0
   m_Name: EnemyWindA
   m_TagString: Untagged
@@ -160,3 +161,15 @@ AreaEffector2D:
   m_ForceTarget: 0
   m_Drag: 0
   m_AngularDrag: 0
+--- !u!114 &3227310281821805726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3092159260562394749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866fda07c9a1f7b44927f8ca91b7f300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
