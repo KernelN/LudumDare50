@@ -5,7 +5,7 @@ namespace Universal.Highscore
 {
     public class UIScore : MonoBehaviour
     {
-        [SerializeField] TextMeshProUGUI highscoreText;
+        [SerializeField] TextMeshProUGUI[] highscoreTexts;
         [SerializeField] TextMeshProUGUI[] scoreTexts;
         [SerializeField] TMP_InputField playerName;
         ScoreManager highscoreManager;
@@ -30,19 +30,30 @@ namespace Universal.Highscore
         {
             highscoreManager.DeleteScore();
         }
-        void UpdateNextHighscoreText()
+        void UpdateNextHighscoreTexts()
         {
+            if (highscoreTexts.Length < 1) return;
+
             //get the score higher than the current
             int higherScorePos = GetScorePosition();
 
+            //Set Highscore text (string)
+            string highscoreText;
+            
             if (higherScorePos == -1)
             {
-                highscoreText.text = "There is no highscore, you're the first!";
+                highscoreText = "There is no highscore, you're the first!";
                 return;
             }
 
             Highscore higherScore = ScoreManager.Get().highscores[higherScorePos];
-            highscoreText.text = "#" + (higherScorePos + 1) + " " + higherScore.name + " - " + higherScore.score;
+            highscoreText = "#" + (higherScorePos + 1) + " " + higherScore.name + " - " + higherScore.score;
+
+            //Update all Highscores Text (UI)
+            foreach (TextMeshProUGUI highscore in highscoreTexts)
+            {
+                highscore.text = highscoreText;
+            }
         }
         int GetScorePosition()
         {
@@ -75,7 +86,7 @@ namespace Universal.Highscore
             {
                 text.text = highscoreManager.score.ToString("D4");
             }
-            UpdateNextHighscoreText();
+            UpdateNextHighscoreTexts();
         }
     }
 }
