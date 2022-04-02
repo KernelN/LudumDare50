@@ -6,15 +6,15 @@ namespace NAMESPACENAME.Gameplay
 {
    public class SpawnEnemyWind : MonoBehaviour
     {
-
         public GameObject objectToSpawnA;
         public GameObject objectToSpawnB;
 
         public float secondsBetweenSpawn;
         public float elapsedTime = 0.0f;
 
-        float y;
-        float x;
+        public float xA;
+        public float xB;
+        float y;  
 
         void Update()
         {
@@ -25,19 +25,17 @@ namespace NAMESPACENAME.Gameplay
         Vector2 GetSpawnPointA()
         {
             y = Random.Range(-0.20f,2.45f);
-            x = 7.5f;
             Debug.Log(y);
 
-            return new Vector2(x, y);
+            return new Vector2(xA, y);
         }
 
         Vector2 GetSpawnPointB()
         {
             y = Random.Range(-0.20f, 2.45f);
-            x = -7.5f;
             Debug.Log(y);
 
-            return new Vector2(x, y);
+            return new Vector2(xB, y);
         }
 
         void SpawnObjectA()
