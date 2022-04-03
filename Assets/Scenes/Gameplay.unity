@@ -1175,8 +1175,9 @@ MonoBehaviour:
     type: 3}
   windForceModifier: 1
   bonusPerSecond: 0.1
-  secondsBetweenSpawn: 6
-  elapsedTime: 0
+  spawnTimer: 6
+  minSpawnTime: 1
+  spawnResetValue: 6
   xA: 7.5
   xB: -7.5
 --- !u!4 &240737981

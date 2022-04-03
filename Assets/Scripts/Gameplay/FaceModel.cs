@@ -7,24 +7,26 @@ namespace NAMESPACENAME.Gameplay
     public class FaceModel : MonoBehaviour
     {
         public Animator faceAnimator;
+        public SpriteRenderer faceRenderer;
 
         public bool isBlinking;
 
         public WindController controller;
-
-        // Start is called before the first frame update
+      
         void Start()
         {
             controller = transform.parent.GetComponent<WindController>();
+            faceRenderer.enabled = false;
         }
 
-        // Update is called once per frame
         void Update()
         {
             if (isBlinking == true)
             {
                 FaceAnimation();
+                
             }
+            faceRenderer.enabled = true;
         }
 
         void FaceAnimation()

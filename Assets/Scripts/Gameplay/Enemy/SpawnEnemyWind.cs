@@ -11,19 +11,40 @@ namespace NAMESPACENAME.Gameplay
         public float windForceModifier;
         public float bonusPerSecond;
 
-        public float secondsBetweenSpawn;
-        public float elapsedTime = 0.0f;
+        public float spawnTimer;
+        public float minSpawnTime;
+        public float spawnResetValue;
 
         public float xA;
         public float xB;
         float y;
 
+        int spawnOne;
+
         void Update()
         {
-            SpawnObject(true);
-            SpawnObject(false);
 
-            windForceModifier += bonusPerSecond * Time.deltaTime;
+            SpawnEnemy();
+
+            /*spawnTimer -= Time.deltaTime;
+            if(spawnTimer <= minSpawnTime)
+            {
+                spawnOne = Random.Range(0, 10);
+                if(spawnOne <= 5)
+                {
+                    SpawnObject(true);
+                }
+                else
+                {
+                    if(spawnOne >= 6)
+                    {
+                        SpawnObject(false);
+                    }
+                }
+
+                windForceModifier += bonusPerSecond * Time.deltaTime;
+                spawnTimer = spawnResetValue;
+            } */
         }
 
         Vector2 GetSpawnPointA()
@@ -42,13 +63,10 @@ namespace NAMESPACENAME.Gameplay
 
         void SpawnObject(bool spawnOnA)
         {
-         
-            elapsedTime += Time.deltaTime;
 
-            if(elapsedTime > secondsBetweenSpawn)
+            spawnTimer -= Time.deltaTime;
+            if (spawnTimer <= minSpawnTime)
             {
-                elapsedTime = 0;
-
                 Vector2 spawnPosition;
                 float spawnRotation;
                 float windAngle;
@@ -70,7 +88,26 @@ namespace NAMESPACENAME.Gameplay
                 newEnemyWind.transform.Rotate(0, spawnRotation, 0);
                 newEnemyWind.GetComponent<WindController>().windAngle = windAngle;
                 newEnemyWind.GetComponent<WindController>().windForce = windForceModifier;
+                spawnTimer = spawnResetValue;
             }
+        }
+
+        void SpawnEnemy()
+        {
+            spawnOne = Random.Range(0, 10);
+            if (spawnOne <= 5)
+            {
+                SpawnObject(true);
+            }
+            else
+            {
+                if (spawnOne >= 6)
+                {
+                    SpawnObject(false);
+                }
+            }
+
+            windForceModifier += bonusPerSecond * Time.deltaTime;
         }
    }
 }

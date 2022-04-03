@@ -52,8 +52,9 @@ namespace NAMESPACENAME.Gameplay
             elapsedStopTime += Time.deltaTime;
             if (elapsedStopTime > stopWindTimer)
             {
-                effector.enabled = false;               
-            }
+                effector.enabled = false;
+                Destroy(this.gameObject);
+            }           
         }
 
         void IncrementWindForce()
