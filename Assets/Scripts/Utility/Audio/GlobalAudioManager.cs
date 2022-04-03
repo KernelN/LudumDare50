@@ -108,6 +108,7 @@ namespace Universal.Audio
             if (audioSource == null) return;
             if (sourceData == null) return;
 
+            audioSource.loop = true;
             audioSource.volume = sourceData.volume;
             audioSource.clip = sourceData.clip;
             audioSource.time = sourceData.time;
