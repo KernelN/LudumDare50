@@ -23,6 +23,8 @@ namespace NAMESPACENAME.Gameplay
             {
                 pot = GameObject.FindGameObjectWithTag("Pot").transform;
             }
+
+            Universal.Highscore.ScoreManager.Get().score = 0;
         }
         private void Update()
         {
