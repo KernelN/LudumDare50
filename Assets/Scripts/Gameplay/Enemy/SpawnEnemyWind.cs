@@ -20,8 +20,8 @@ namespace NAMESPACENAME.Gameplay
 
         void Update()
         {
-            SpawnObjectA(true);
-            SpawnObjectA(false);
+            SpawnObject(true);
+            SpawnObject(false);
 
             windForceModifier += bonusPerSecond * Time.deltaTime;
         }
@@ -40,7 +40,7 @@ namespace NAMESPACENAME.Gameplay
             return new Vector2(xB, y);
         }
 
-        void SpawnObjectA(bool spawnOnA)
+        void SpawnObject(bool spawnOnA)
         {
          
             elapsedTime += Time.deltaTime;

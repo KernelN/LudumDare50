@@ -7,6 +7,7 @@ namespace NAMESPACENAME.Gameplay
 {
     public class WindController : MonoBehaviour
     {
+
         public AreaEffector2D effector;
         
         public float initialWindForce;
@@ -23,13 +24,11 @@ namespace NAMESPACENAME.Gameplay
 
         public float windAngle { set { effector.forceAngle = value; } }
 
-        // Start is called before the first frame update
         void Start()
         {
             effector.enabled = false;
         }
 
-        // Update is called once per frame
         void Update()
         {
             StartWind();
@@ -47,13 +46,13 @@ namespace NAMESPACENAME.Gameplay
             }
         }
 
+        //After x seconds the wind stops blowing.
         void StopWind()
-        {
+        {           
             elapsedStopTime += Time.deltaTime;
             if (elapsedStopTime > stopWindTimer)
             {
-                //effector.enabled = false;
-                Destroy(gameObject);
+                effector.enabled = false;               
             }
         }
 
