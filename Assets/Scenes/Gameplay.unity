@@ -3110,11 +3110,13 @@ MonoBehaviour:
   windEmpty: {fileID: 1749274487}
   windPrefab: {fileID: 1179454896348021416, guid: 3babcd37f9132384e87140bfcb768ad3,
     type: 3}
-  maxWindHeight: 3.25
+  maxWindPos: {x: 5, y: 3}
+  minWindPos: {x: -5, y: -1.5}
   maxWindsInGame: 25
   winds: []
   windStart: {x: 0, y: 0}
   windDirection: {x: 0, y: 0}
+  windStartFailed: 0
 --- !u!4 &2026008249
 Transform:
   m_ObjectHideFlags: 0

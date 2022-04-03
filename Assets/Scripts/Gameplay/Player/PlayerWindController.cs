@@ -9,13 +9,15 @@ namespace NAMESPACENAME.Gameplay
         [Header("Set Values")]
         [SerializeField] Transform windEmpty;
         [SerializeField] GameObject windPrefab;
-        [SerializeField] float maxWindHeight;
+        [SerializeField] Vector2 maxWindPos;
+        [SerializeField] Vector2 minWindPos;
         [SerializeField] int maxWindsInGame;
         
         [Header("Runtime Values")]
         [SerializeField] List<Transform> winds;
         [SerializeField] Vector2 windStart;
         [SerializeField] Vector2 windDirection;
+        [SerializeField] bool windStartFailed;
 
         //Unity Events
         private void Update()
@@ -39,21 +41,28 @@ namespace NAMESPACENAME.Gameplay
             //Get Start of Drag mouse position
             windStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if(windStart.y > maxWindHeight)
+            if(windStart.y > maxWindPos.y || windStart.y < minWindPos.y)
             {
-                windStart.y = maxWindHeight;
+                windStartFailed = true;
+            }
+            if (windStart.x > maxWindPos.x || windStart.x < minWindPos.x)
+            {
+                windStartFailed = true;
             }
             //Debug.Log("Start Drag - " + windStart);
         }
         void AddWindDirection()
         {
+            //if spawn failed, restart bool and wait for next spawn
+            if (windStartFailed)
+            {
+                windStartFailed = false;
+                return;
+            }
+
             //Get End of Drag mouse position
             windDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            if (windDirection.y > maxWindHeight)
-            {
-                windDirection.y = maxWindHeight;
-            }
+                        
             //Debug.Log("End Drag - " + windDirection);
 
             //Calculate Direction
