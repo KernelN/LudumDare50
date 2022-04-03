@@ -10,7 +10,6 @@ namespace NAMESPACENAME.Gameplay
         public Animation angryFaceAnimation;
         public float angryFaceAnimationLenght;
 
-
         public bool windStartedBlowing;
 
         public WindController controller;
@@ -18,13 +17,14 @@ namespace NAMESPACENAME.Gameplay
         void Start()
         {
             controller = transform.parent.GetComponent<WindController>();
+
             angryFaceAnimationLenght = angryFaceAnimation.clip.averageDuration;
-            angryFaceAnimation["AngryGodFace"].speed = angryFaceAnimationLenght / controller.startWindTimer;
+            angryFaceAnimation["AngryGodFace_Animation"].speed = angryFaceAnimationLenght / controller.startWindTimer;
         }
 
         void Update()
         {
-            if(windStartedBlowing == false)
+            if (windStartedBlowing == false)
             {
                 StarBlowAnimation();
             }
