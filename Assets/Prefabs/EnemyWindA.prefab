@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 3092159260562394744}
   - component: {fileID: 3092159260562394747}
   - component: {fileID: 3227310281821805726}
+  - component: {fileID: 1716141342738330585}
   m_Layer: 0
   m_Name: EnemyWindA
   m_TagString: Untagged
@@ -128,7 +129,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -3.849133, y: 0}
+  m_Offset: {x: 3.849133, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -155,7 +156,7 @@ AreaEffector2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_UseGlobalAngle: 0
-  m_ForceAngle: 180
+  m_ForceAngle: 0
   m_ForceMagnitude: 4
   m_ForceVariation: 0
   m_ForceTarget: 0
@@ -173,3 +174,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 866fda07c9a1f7b44927f8ca91b7f300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  despawnTimer: 5
+--- !u!114 &1716141342738330585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3092159260562394749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8bb670c2236ef4cbb731d3ec5bbaaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effector: {fileID: 3092159260562394747}
+  windForce: 0
+  initialWindForce: 0
+  finalWindForce: 5
+  windForceTimer: 1
+  startWindTimer: 1
+  stopWindTimer: 4
+  elapsedTime: 0
+  elapsedStopTime: 0

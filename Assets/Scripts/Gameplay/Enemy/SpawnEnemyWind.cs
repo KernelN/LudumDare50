@@ -5,27 +5,30 @@ using UnityEngine;
 namespace NAMESPACENAME.Gameplay
 {
    public class SpawnEnemyWind : MonoBehaviour
-    {
-        public GameObject objectToSpawnA;
-        public GameObject objectToSpawnB;
+   {
+        public GameObject objectToSpawn;
+
+        public float windForceModifier;
+        public float bonusPerSecond;
 
         public float secondsBetweenSpawn;
         public float elapsedTime = 0.0f;
 
         public float xA;
         public float xB;
-        float y;  
+        float y;
 
         void Update()
         {
-            SpawnObjectA();
-            SpawnObjectB();
+            SpawnObjectA(true);
+            SpawnObjectA(false);
+
+            windForceModifier += bonusPerSecond * Time.deltaTime;
         }
 
         Vector2 GetSpawnPointA()
         {
             y = Random.Range(-0.20f,2.45f);
-            Debug.Log(y);
 
             return new Vector2(xA, y);
         }
@@ -33,36 +36,42 @@ namespace NAMESPACENAME.Gameplay
         Vector2 GetSpawnPointB()
         {
             y = Random.Range(-0.20f, 2.45f);
-            Debug.Log(y);
 
             return new Vector2(xB, y);
         }
 
-        void SpawnObjectA()
+        void SpawnObjectA(bool spawnOnA)
         {
+         
             elapsedTime += Time.deltaTime;
 
             if(elapsedTime > secondsBetweenSpawn)
             {
                 elapsedTime = 0;
 
-                Vector2 spawnPosition = GetSpawnPointA();
-                GameObject newEnemyWind = (GameObject)Instantiate(objectToSpawnA, spawnPosition, Quaternion.identity);
+                Vector2 spawnPosition;
+                float spawnRotation;
+                float windAngle;
+
+                if (spawnOnA)
+                {
+                    spawnPosition = GetSpawnPointA();
+                    spawnRotation = 180;
+                    windAngle = 180;
+                }
+                else
+                {
+                    spawnPosition = GetSpawnPointB();
+                    spawnRotation = 0;
+                    windAngle = 0;
+                }
+
+                GameObject newEnemyWind = (GameObject)Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+                newEnemyWind.transform.Rotate(0, spawnRotation, 0);
+                newEnemyWind.GetComponent<WindController>().windAngle = windAngle;
+                newEnemyWind.GetComponent<WindController>().windForce = windForceModifier;
             }
         }
-
-        void SpawnObjectB()
-        {
-            elapsedTime += Time.deltaTime;
-
-            if (elapsedTime > secondsBetweenSpawn)
-            {
-                elapsedTime = 0;
-
-                Vector2 spawnPosition = GetSpawnPointB();
-                GameObject newEnemyWind = (GameObject)Instantiate(objectToSpawnB, spawnPosition, Quaternion.identity);
-            }
-        }
-    }
+   }
 }
 

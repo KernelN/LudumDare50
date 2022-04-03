@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class DestroyObject : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float despawnTimer;
+
     void Start()
     {
-        Destroy(this.gameObject, 1f);
+        Destroy(this.gameObject, despawnTimer);
     }
 
     // Update is called once per frame

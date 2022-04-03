@@ -1309,11 +1309,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91919419037bf8a4483aee8c9734b9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawnA: {fileID: 3092159260562394749, guid: 072d51990db0ddb42aecc2f5a99b2135,
+  objectToSpawn: {fileID: 3092159260562394749, guid: 072d51990db0ddb42aecc2f5a99b2135,
     type: 3}
-  objectToSpawnB: {fileID: 8006404298237661995, guid: 06792bfefd6f9c9429cc746f9c34e66e,
-    type: 3}
-  secondsBetweenSpawn: 3
+  windForceModifier: 1
+  bonusPerSecond: 0.1
+  secondsBetweenSpawn: 6
   elapsedTime: 0
   xA: 7.5
   xB: -7.5
