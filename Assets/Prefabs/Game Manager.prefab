@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 43739211142894523}
   - component: {fileID: 6645520315626216323}
   - component: {fileID: 4535824478285347520}
+  - component: {fileID: 760190880}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -45,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7c5e54b3900e54c8fe1b25aa9f6a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScene: 0
+  currentScene: 1
 --- !u!114 &6645520315626216323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,3 +79,29 @@ MonoBehaviour:
   currentScore:
     score: 0
     name: 
+--- !u!114 &760190880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43739211142894525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c604c49defab348915f3e79a50c733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  manager: {fileID: 43739211142894523}
+  gameplayMusic: {fileID: 8300000, guid: 80c52d63b3d33aa4b86471c311cb648e, type: 3}
+  menuMusic: {fileID: 8300000, guid: b87c6a8fc47482047999a463f0ab44d8, type: 3}
+  volumeFadeLength: 1
+  minVolume: 0.2
+  sourceData:
+    clip: {fileID: 0}
+    volume: 1
+    time: 0
+    isPlaying: 0
+  fadeTimer: 0
+  playGameplayMusic: 0
+  playingGameplayMusic: 0
