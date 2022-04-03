@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3092159260064577650}
   - component: {fileID: 3092159260064577651}
+  - component: {fileID: 2863424491580860985}
   m_Layer: 0
   m_Name: AngryGodFace
   m_TagString: Untagged
@@ -81,6 +82,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2863424491580860985
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3092159260064577653}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 609adca3e70fa6744a66e08b4cad6c34, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3092159260562394749
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 866fda07c9a1f7b44927f8ca91b7f300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnTimer: 5
+  despawnTimer: 4
 --- !u!114 &1716141342738330585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +213,7 @@ MonoBehaviour:
   finalWindForce: 5
   windForceTimer: 1
   windForce: 0
-  startWindTimer: 2.5
+  startWindTimer: 1
   stopWindTimer: 4
   elapsedTime: 0
   elapsedStopTime: 0
@@ -313,6 +333,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windAnimator: {fileID: 5034130943609874341}
   angryFaceAnimation: {fileID: 0}
-  angryFaceAnimationLenght: 0
+  angryFaceAnimationLenght: 90
   windStartedBlowing: 0
   controller: {fileID: 0}
