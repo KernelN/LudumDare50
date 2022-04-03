@@ -7,6 +7,7 @@ namespace NAMESPACENAME.Gameplay
     {
 
         [Header("Set Values")]
+        [SerializeField] Transform pot;
         [SerializeField] Transform windEmpty;
         [SerializeField] GameObject windPrefab;
         [SerializeField] Vector2 maxWindPos;
@@ -20,6 +21,13 @@ namespace NAMESPACENAME.Gameplay
         [SerializeField] bool windStartFailed;
 
         //Unity Events
+        private void Start()
+        {
+            if (pot == null)
+            {
+                pot = GameObject.FindGameObjectWithTag("Pot").transform;
+            }
+        }
         private void Update()
         {
             //Check TimeScale/Pause before asking for input -THIS IS VERY BERRETA, CHANGE LATER
@@ -28,9 +36,6 @@ namespace NAMESPACENAME.Gameplay
             if (Input.GetMouseButtonDown(0))
             {
                 AddWindStartPos();
-            }
-            else if (Input.GetMouseButtonUp(0))
-            {
                 AddWindDirection();
             }
         }
@@ -61,7 +66,7 @@ namespace NAMESPACENAME.Gameplay
             }
 
             //Get End of Drag mouse position
-            windDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            windDirection = pot.position;
                         
             //Debug.Log("End Drag - " + windDirection);
 

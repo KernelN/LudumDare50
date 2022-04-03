@@ -1153,16 +1153,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 760190880, guid: a26e03009e88c53479af649b5bf12b2c, type: 3}
+    - target: {fileID: 129191208, guid: a26e03009e88c53479af649b5bf12b2c, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1906925748}
-    - target: {fileID: 760190880, guid: a26e03009e88c53479af649b5bf12b2c, type: 3}
+    - target: {fileID: 129191208, guid: a26e03009e88c53479af649b5bf12b2c, type: 3}
       propertyPath: playGameplayMusic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 760190880, guid: a26e03009e88c53479af649b5bf12b2c, type: 3}
-      propertyPath: playingGameplayMusic
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 43739211142894522, guid: a26e03009e88c53479af649b5bf12b2c,
@@ -3107,6 +3103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f14c57984cc0ed408926ca7293f0dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pot: {fileID: 0}
   windEmpty: {fileID: 1749274487}
   windPrefab: {fileID: 1179454896348021416, guid: 3babcd37f9132384e87140bfcb768ad3,
     type: 3}
