@@ -8,13 +8,16 @@ namespace NAMESPACENAME
     {
         public System.Action SceneChanged;
 
-        public Scenes targetScene { get { return currentScene; } }
         [SerializeField] Scenes currentScene;
+        [SerializeField] PlayerData playerData;
+
+        public Scenes targetScene { get { return currentScene; } }
 
         //Unity Events
         private void Start()
         {
             currentScene = SceneLoader.GetCurrentScene();
+            LoadAll();
         }
         private void OnDestroy()
         {
@@ -40,12 +43,21 @@ namespace NAMESPACENAME
         }
         public void QuitGame()
         {
-            //if (currentScene == Scenes.idle)
-            //{
-            //    player?.SaveLogOutDate();
-            //}
-            //player?.SaveData();
+            SaveAll();
             Application.Quit();
+        }
+        void SaveAll()
+        {
+            playerData.SaveData();
+        }
+        void LoadAll()
+        {
+            if (playerData == null)
+            {
+                playerData = new PlayerData();
+            }
+
+            playerData.LoadData();
         }
     }
 }

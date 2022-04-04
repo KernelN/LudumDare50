@@ -9,7 +9,7 @@ namespace NAMESPACENAME.Gameplay
     {
 
         public AreaEffector2D effector;
-        
+
         public float initialWindForce;
         public float finalWindForce;
         public float windForceTimer;
@@ -56,18 +56,18 @@ namespace NAMESPACENAME.Gameplay
         //After x seconds the wind stops blowing.
         void StopWind()
         {
-            if (elapsedStopTime > stopWindTimer)
+            if (elapsedTime > stopWindTimer)
             {
                 effector.enabled = false;
                 Destroy(this.gameObject);
-            }           
+            }
         }
 
         void IncrementWindForce()
         {
-            effector.forceVariation = initialWindForce * windForce;           
+            effector.forceVariation = initialWindForce * windForce;
 
-            if(elapsedTime > windForceTimer)
+            if (elapsedTime > windForceTimer)
             {
                 effector.forceVariation = finalWindForce * windForce;
             }
