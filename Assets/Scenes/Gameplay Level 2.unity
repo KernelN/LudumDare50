@@ -926,6 +926,8 @@ MonoBehaviour:
   pot: {fileID: 0}
   loseHeight: -5
   sendGameOverTimer: 1.5
+  timeForNextLvl: 60
+  level: 2
   timer: 0
   pause: 0
   gameOver: 0

@@ -2,7 +2,7 @@
 using UnityEngine;
 using Universal.Singletons;
 
-namespace NAMESPACENAME.Background
+namespace Anemos.Background
 {
     public class BackgroundManager : MonoBehaviourSingletonInScene<BackgroundManager>
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace NAMESPACENAME.Background
+namespace Anemos.Background
 {
     [Serializable]
     public struct TimedBackground

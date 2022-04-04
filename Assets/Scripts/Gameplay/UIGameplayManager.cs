@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace NAMESPACENAME.Gameplay
+namespace Anemos.Gameplay
 {
     public class UIGameplayManager : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NAMESPACENAME.Background
+namespace Anemos.Background
 {
     [Serializable]
     public struct BackgroundHours

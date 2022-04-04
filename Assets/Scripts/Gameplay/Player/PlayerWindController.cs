@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace NAMESPACENAME.Gameplay
+namespace Anemos.Gameplay
 {
     public class PlayerWindController : MonoBehaviour
     {

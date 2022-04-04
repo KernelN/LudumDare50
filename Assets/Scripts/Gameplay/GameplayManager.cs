@@ -2,7 +2,7 @@
 using UnityEngine;
 using Universal.Singletons;
 
-namespace NAMESPACENAME.Gameplay
+namespace Anemos.Gameplay
 {
     public class GameplayManager : MonoBehaviourSingletonInScene<GameplayManager>
     {
@@ -10,6 +10,8 @@ namespace NAMESPACENAME.Gameplay
         [SerializeField] Transform pot;
         [SerializeField] float loseHeight;
         [SerializeField] float sendGameOverTimer;
+        [SerializeField] float timeForNextLvl;
+        [SerializeField] int level;
 
         [Header("Runtime Values")]
         [SerializeField] float timer;
@@ -76,14 +78,16 @@ namespace NAMESPACENAME.Gameplay
             timer += Time.deltaTime;
 
             //if timer bigger than 1, add 1 to score and reset timer
-            if (timer > 1)
-            {
-                timer -= 1;
-                Universal.Highscore.ScoreManager.Get().score += 1;
-            }
+            Universal.Highscore.ScoreManager.Get().score = (int)timer * level;
         }
         void GameOver()
         {
+            PlayerData playerData = GameManager.Get().playerData;
+            if (timer > timeForNextLvl && level == playerData.lastLevelUnlocked)
+            {
+                playerData.lastLevelUnlocked++;
+            }
+
             PlayerLost?.Invoke();
         }
     }

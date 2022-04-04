@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace NAMESPACENAME.Gameplay
+namespace Anemos.Gameplay
 {
     [RequireComponent(typeof(AudioSource))]
     public class PotAudio : MonoBehaviour

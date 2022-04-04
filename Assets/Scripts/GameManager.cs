@@ -2,14 +2,14 @@
 using Universal.SceneManaging;
 using Universal.Singletons;
 
-namespace NAMESPACENAME
+namespace Anemos
 {
     public class GameManager : MonoBehaviourSingleton<GameManager>
     {
-        public System.Action SceneChanged;
-
+        public PlayerData playerData;
         [SerializeField] Scenes currentScene;
-        [SerializeField] PlayerData playerData;
+
+        public System.Action SceneChanged;
 
         public Scenes targetScene { get { return currentScene; } }
 

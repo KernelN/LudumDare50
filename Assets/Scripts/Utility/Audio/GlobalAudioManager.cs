@@ -6,7 +6,7 @@ namespace Universal.Audio
     public class GlobalAudioManager : MonoBehaviourSingletonInScene<GlobalAudioManager>
     {
         [Header("Set Values")]
-        [SerializeField] NAMESPACENAME.GameManager manager;
+        [SerializeField] Anemos.GameManager manager;
         [SerializeField] AudioSource audioSource;
         [SerializeField] AudioClip gameplayMusic;
         [SerializeField] AudioClip menuMusic;

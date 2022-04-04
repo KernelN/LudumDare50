@@ -1,12 +1,12 @@
 ﻿using Universal.FileManaging;
 using Universal.Highscore;
 
-namespace NAMESPACENAME
+namespace Anemos
 {
     [System.Serializable]
     public class PlayerData
     {
-        int lastLevelUnlocked = 1;
+        public int lastLevelUnlocked = 1;
         HighscoresTable highScores;
 
         public void LoadData()

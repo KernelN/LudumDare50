@@ -304,6 +304,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 1 - Button
       objectReference: {fileID: 0}
+    - target: {fileID: 1603777450530113149, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115724, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_Name
@@ -312,12 +317,12 @@ PrefabInstance:
     - target: {fileID: 1603777451990115762, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_text
-      value: Easy
+      value: Offense
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115762, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_fontSize
-      value: 30.1
+      value: 18.8
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115762, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
@@ -338,23 +343,38 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -4.7046204
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 20.783348
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
+        type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.6
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.42999268
+      value: -0.000019073486
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000005722046
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 286ae1e73a3cd744fbd561a17d74b7bd, type: 3}
@@ -891,6 +911,7 @@ GameObject:
   - component: {fileID: 667678550}
   - component: {fileID: 667678549}
   - component: {fileID: 667678548}
+  - component: {fileID: 667678553}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -996,6 +1017,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &667678553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667678547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e635e895647844db860c78f7c42aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelButtons:
+  - {fileID: 1668213692}
+  - {fileID: 1473690400}
+  - {fileID: 2111098298}
 --- !u!1 &818282157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,6 +1704,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48603d24d6171614ba5286627bcde907, type: 3}
+--- !u!1 &1473690400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1603777450530113149, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1596644950}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1548315981
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,20 +2217,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 2 - Button
       objectReference: {fileID: 0}
+    - target: {fileID: 1603777450530113149, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115724, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_Name
-      value: Play - Text (TMP)
+      value: Level 2 - Text (TMP)
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115762, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_text
-      value: Normal
+      value: Punishment
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115762, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_fontSize
-      value: 19.95
+      value: 18.1
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115762, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
@@ -2208,23 +2256,38 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 22.727737
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 14.606865
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
+        type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.6
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.42999268
+      value: -0.0000038146973
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0000019073486
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 286ae1e73a3cd744fbd561a17d74b7bd, type: 3}
@@ -2233,6 +2296,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1603777450530113148, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
     type: 3}
   m_PrefabInstance: {fileID: 1596644950}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1668213692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1603777450530113149, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 147726003}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1834445597
 PrefabInstance:
@@ -2417,20 +2486,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 3 - Button
       objectReference: {fileID: 0}
+    - target: {fileID: 1603777450530113149, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115724, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_Name
-      value: Play - Text (TMP)
+      value: Level 3 - Text (TMP)
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115762, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_text
-      value: Hard
+      value: Challenge
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115762, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_fontSize
-      value: 31.7
+      value: 18.85
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115762, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
@@ -2451,23 +2525,28 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 7.9786453
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
+        type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.6
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115763, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.42999268
+      value: 0.000019073486
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 286ae1e73a3cd744fbd561a17d74b7bd, type: 3}
@@ -2554,6 +2633,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a26e03009e88c53479af649b5bf12b2c, type: 3}
+--- !u!1 &2111098298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1603777450530113149, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1834445597}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1603777451170648070
 GameObject:
   m_ObjectHideFlags: 0
