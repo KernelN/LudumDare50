@@ -9,11 +9,13 @@ namespace NAMESPACENAME.Gameplay
         [Header("Set Values")]
         [SerializeField] Transform pot;
         [SerializeField] float loseHeight;
+        [SerializeField] float sendGameOverTimer;
 
         [Header("Runtime Values")]
         [SerializeField] float timer;
         [SerializeField] bool gameOver;
 
+        public Action PlayerLost;
         public Action PotFalled;
 
         //Unity Events
@@ -51,7 +53,9 @@ namespace NAMESPACENAME.Gameplay
         {
             if (pot.position.y < loseHeight)
             {
-                GameOver();
+                PotFalled.Invoke();
+                gameOver = true;
+                Invoke("GameOver", sendGameOverTimer);
             }
         }
         void UpdateTimer()
@@ -68,8 +72,7 @@ namespace NAMESPACENAME.Gameplay
         }
         void GameOver()
         {
-            gameOver = true;
-            PotFalled?.Invoke();
+            PlayerLost?.Invoke();
         }
     }
 }

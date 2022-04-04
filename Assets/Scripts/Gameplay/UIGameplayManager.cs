@@ -26,12 +26,12 @@ namespace NAMESPACENAME.Gameplay
             }
 
             //Link action
-            manager.PotFalled += OnPotFalled;
+            manager.PlayerLost += OnPotFalled;
         }
         private void OnDestroy()
         {
             //Unlink action
-            manager.PotFalled -= OnPotFalled;
+            manager.PlayerLost -= OnPotFalled;
         }
 
         //Methods
