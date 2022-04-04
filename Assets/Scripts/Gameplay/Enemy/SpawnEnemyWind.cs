@@ -73,7 +73,14 @@ namespace NAMESPACENAME.Gameplay
                 newEnemyWind.transform.Rotate(0, spawnRotation, 0);
                 newEnemyWind.GetComponent<WindController>().windAngle = windAngle;
                 newEnemyWind.GetComponent<WindController>().windForce = windForceModifier;
+
+                spawnResetValue--;
                 spawnTimer = spawnResetValue;
+
+                if(spawnTimer < minSpawnTime)
+                {
+                    spawnTimer = minSpawnTime + 2f;
+                }
             }
         }
 
@@ -83,17 +90,14 @@ namespace NAMESPACENAME.Gameplay
             if (spawnOne <= 5)
             {
                 SpawnObject(true);
-            }
+            }          
             else
             {
-                if (spawnOne >= 6)
-                {
-                    SpawnObject(false);
-                }
+                SpawnObject(false);
             }
 
             windForceModifier += bonusPerSecond * Time.deltaTime;
         }
-   }
+    }
 }
 

@@ -7,8 +7,6 @@ namespace NAMESPACENAME.Gameplay
     public class WindModel : MonoBehaviour
     {
         public Animator windAnimator;
-        //public Animation angryFaceAnimation;
-        //public float angryFaceAnimationLenght;
 
         public bool windStartedBlowing;
 
@@ -17,9 +15,6 @@ namespace NAMESPACENAME.Gameplay
         void Start()
         {
             controller = transform.parent.GetComponent<WindController>();
-
-            //angryFaceAnimationLenght = angryFaceAnimation.clip.averageDuration;
-            //angryFaceAnimation["AngryGodFace_Animation"].speed = angryFaceAnimationLenght / controller.startWindTimer;
         }
 
         void Update()

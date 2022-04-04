@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1179454896348021417}
   - component: {fileID: 1179454896348021423}
   - component: {fileID: 1179454896348021420}
+  - component: {fileID: 4140663257414670130}
+  - component: {fileID: -1143729729429332935}
   m_Layer: 0
   m_Name: Player Wind
   m_TagString: Untagged
@@ -129,3 +131,37 @@ AreaEffector2D:
   m_ForceTarget: 0
   m_Drag: 0
   m_AngularDrag: 0
+--- !u!95 &4140663257414670130
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179454896348021416}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4af0d3529f58b6f4d99573a78203d73b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-1143729729429332935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179454896348021416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007738a5998504347b09e4580a8b5ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerWindAnimator: {fileID: 0}
+  playerWindStartedBlowing: 0
+  controller: {fileID: 0}
