@@ -8,24 +8,14 @@ namespace NAMESPACENAME.Gameplay
     {
         public Animator playerWindAnimator;
 
-        public bool playerWindStartedBlowing;
-
-        public PlayerWindController controller;
-
-        void Start()
-        {
-            controller = transform.parent.GetComponent<PlayerWindController>();
-        }
-
-
         void Update()
         {
-
+            StartWindAnimation();
         }
 
         void StartWindAnimation()
         {
-
+            playerWindAnimator.SetTrigger("windBlowing");
         }
     }
 }
