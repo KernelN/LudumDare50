@@ -1,5 +1,5 @@
 <p align="center">
-<img src="AnemosLogo.png" alt="Anemos"/>
+<img src="AnemosLogo.jpg" alt="Anemos"/>
 </p>
 
 **Game made for Ludum Dare 50**
