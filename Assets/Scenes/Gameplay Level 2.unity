@@ -1183,7 +1183,7 @@ MonoBehaviour:
   windForceModifier: 0.5
   bonusPerSecond: 0.05
   spawnTimer: 7
-  spawnTimerDecrease: 0.6
+  spawnTimerDecrease: 0.7
   minSpawnTime: 1
   xA: 7.5
   xB: -7.5

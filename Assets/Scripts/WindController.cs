@@ -22,6 +22,8 @@ namespace NAMESPACENAME.Gameplay
         public float elapsedTime;
         public float elapsedStopTime;
 
+        public System.Action WindStarted;
+
         public float windAngle { set { effector.forceAngle = value; } }
 
         void Start()
@@ -31,6 +33,8 @@ namespace NAMESPACENAME.Gameplay
 
         void Update()
         {
+            AdvanceTimer();
+
             StartWind();
             IncrementWindForce();
             StopWind();
@@ -39,17 +43,19 @@ namespace NAMESPACENAME.Gameplay
         //After x seconds the wind starts blowing.
         void StartWind()
         {
-            elapsedTime += Time.deltaTime;
+            //Prevents function to be called once the wind already started
+            if (effector.enabled) return;
+
             if (elapsedTime > startWindTimer)
             {
                 effector.enabled = true;
+                WindStarted?.Invoke();
             }
         }
 
         //After x seconds the wind stops blowing.
         void StopWind()
-        {           
-            elapsedStopTime += Time.deltaTime;
+        {
             if (elapsedStopTime > stopWindTimer)
             {
                 effector.enabled = false;
@@ -61,11 +67,15 @@ namespace NAMESPACENAME.Gameplay
         {
             effector.forceVariation = initialWindForce * windForce;           
 
-            elapsedTime += Time.deltaTime;
             if(elapsedTime > windForceTimer)
             {
                 effector.forceVariation = finalWindForce * windForce;
             }
+        }
+
+        void AdvanceTimer()
+        {
+            elapsedTime += Time.deltaTime;
         }
     }
 }
