@@ -12,6 +12,7 @@ namespace NAMESPACENAME.Gameplay
         public float bonusPerSecond;
 
         public float spawnTimer;
+        public float spawnTimerDecrease;
         public float minSpawnTime;
 
         float spawnResetValue;
@@ -50,7 +51,7 @@ namespace NAMESPACENAME.Gameplay
         {
 
             spawnTimer -= Time.deltaTime;
-            if (spawnTimer <= minSpawnTime)
+            if (spawnTimer <= 0)
             {
                 Vector2 spawnPosition;
                 float spawnRotation;
@@ -74,7 +75,7 @@ namespace NAMESPACENAME.Gameplay
                 newEnemyWind.GetComponent<WindController>().windAngle = windAngle;
                 newEnemyWind.GetComponent<WindController>().windForce = windForceModifier;
 
-                spawnResetValue--;
+                spawnResetValue -= spawnTimerDecrease;
                 spawnTimer = spawnResetValue;
 
                 if(spawnTimer < minSpawnTime)
