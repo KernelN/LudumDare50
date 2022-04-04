@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3092159260064577653}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.04, y: 0.34, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.92, z: 0}
   m_LocalScale: {x: 0.44428822, y: 0.44428822, z: 0.44428822}
   m_Children: []
   m_Father: {fileID: 3092159260562394746}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3092159260064577651
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f6988fbb09b48154581ebb10e3c741f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ae0cbce20dc8f1429fcd8bad407c0a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,7 +93,7 @@ Animator:
   m_GameObject: {fileID: 3092159260064577653}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 609adca3e70fa6744a66e08b4cad6c34, type: 2}
+  m_Controller: {fileID: 9100000, guid: ae74ae9e319c089438494e9acaf4b2f9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -115,8 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faceAnimator: {fileID: 1828121589667500796}
-  faceRenderer: {fileID: 3092159260064577651}
-  isBlinking: 1
+  isBlowing: 0
   controller: {fileID: 0}
 --- !u!1 &3092159260562394749
 GameObject:

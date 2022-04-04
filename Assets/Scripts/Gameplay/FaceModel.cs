@@ -7,34 +7,30 @@ namespace NAMESPACENAME.Gameplay
     public class FaceModel : MonoBehaviour
     {
         public Animator faceAnimator;
-        public SpriteRenderer faceRenderer;
 
-        public bool isBlinking;
+        public bool isBlowing;
 
         public WindController controller;
       
         void Start()
-        {
+        {           
             controller = transform.parent.GetComponent<WindController>();
-            faceRenderer.enabled = false;
         }
 
         void Update()
         {
-            if (isBlinking == true)
+            if (isBlowing == false)
             {
-                FaceAnimation();
-                
-            }
-            faceRenderer.enabled = true;
+                FaceBlowingAnimation();
+            }          
         }
 
-        void FaceAnimation()
+        void FaceBlowingAnimation()
         {
             if (controller.elapsedTime < controller.startWindTimer)
             {
-                faceAnimator.SetTrigger("faceBlinking");
-                isBlinking = false;
+                faceAnimator.SetTrigger("faceBlowing");
+                isBlowing = true;
             }
         }
     }
