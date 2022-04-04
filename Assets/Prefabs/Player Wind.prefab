@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.44705883}
+  m_Color: {r: 0, g: 0.65281343, b: 1, a: 0.44705883}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -163,4 +163,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerWindAnimator: {fileID: 4140663257414670130}
-  playerWindStartedBlowing: 0
