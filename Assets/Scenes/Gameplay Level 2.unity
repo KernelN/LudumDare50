@@ -926,7 +926,7 @@ MonoBehaviour:
   pot: {fileID: 0}
   loseHeight: -5
   sendGameOverTimer: 1.5
-  timeForNextLvl: 60
+  timeForNextLvl: 50
   level: 2
   timer: 0
   pause: 0
@@ -2571,7 +2571,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7c6c9a7a8c3464d47948588988c4cca5, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

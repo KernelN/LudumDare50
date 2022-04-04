@@ -926,7 +926,7 @@ MonoBehaviour:
   pot: {fileID: 0}
   loseHeight: -5
   sendGameOverTimer: 1.5
-  timeForNextLvl: 45
+  timeForNextLvl: 40
   level: 1
   timer: 0
   pause: 0
@@ -2536,7 +2536,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1289139524}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7c6c9a7a8c3464d47948588988c4cca5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
