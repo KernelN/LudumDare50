@@ -13,7 +13,8 @@ namespace NAMESPACENAME.Gameplay
 
         public float spawnTimer;
         public float minSpawnTime;
-        public float spawnResetValue;
+
+        float spawnResetValue;
 
         public float xA;
         public float xB;
@@ -21,30 +22,14 @@ namespace NAMESPACENAME.Gameplay
 
         int spawnOne;
 
-        void Update()
+        void Start()
         {
+            spawnResetValue = spawnTimer;
+        }
 
+        void Update()
+        {           
             SpawnEnemy();
-
-            /*spawnTimer -= Time.deltaTime;
-            if(spawnTimer <= minSpawnTime)
-            {
-                spawnOne = Random.Range(0, 10);
-                if(spawnOne <= 5)
-                {
-                    SpawnObject(true);
-                }
-                else
-                {
-                    if(spawnOne >= 6)
-                    {
-                        SpawnObject(false);
-                    }
-                }
-
-                windForceModifier += bonusPerSecond * Time.deltaTime;
-                spawnTimer = spawnResetValue;
-            } */
         }
 
         Vector2 GetSpawnPointA()
