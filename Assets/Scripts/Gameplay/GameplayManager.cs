@@ -9,12 +9,18 @@ namespace NAMESPACENAME.Gameplay
         [Header("Set Values")]
         [SerializeField] Transform pot;
         [SerializeField] float loseHeight;
+        [SerializeField] float sendGameOverTimer;
 
         [Header("Runtime Values")]
         [SerializeField] float timer;
+        [SerializeField] bool pause = false;
         [SerializeField] bool gameOver;
 
+        public Action PlayerLost;
         public Action PotFalled;
+        public Action GamePaused;
+
+        public bool publicPause { get { return pause; } }
 
         //Unity Events
         private void Start()
@@ -28,11 +34,19 @@ namespace NAMESPACENAME.Gameplay
         }
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                pause = !pause;
+                GameManager.Get().SetPause(pause);
+                GamePaused.Invoke();
+            }
+
+            if (Time.timeScale == 0) return;
             if (gameOver) return;
-            
+
             CheckPotHeight();
 
-            UpdateTimer();
+            UpdateTimer();            
 
 #if UNITY_EDITOR
             DrawGameOverHeight();
@@ -51,7 +65,9 @@ namespace NAMESPACENAME.Gameplay
         {
             if (pot.position.y < loseHeight)
             {
-                GameOver();
+                PotFalled.Invoke();
+                gameOver = true;
+                Invoke("GameOver", sendGameOverTimer);
             }
         }
         void UpdateTimer()
@@ -68,8 +84,7 @@ namespace NAMESPACENAME.Gameplay
         }
         void GameOver()
         {
-            gameOver = true;
-            PotFalled?.Invoke();
+            PlayerLost?.Invoke();
         }
     }
 }
