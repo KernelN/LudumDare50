@@ -29,13 +29,13 @@ namespace NAMESPACENAME
         {
             Time.timeScale = pause ? 0 : 1;
         }
-        public void LoadScene(Scenes sceneToLoad)
+        public void LoadScene(Scenes sceneToLoad, int level)
         {
             SetPause(false); //reset time in case game was paused
 
             //Update "currentScene" and load
             currentScene = sceneToLoad;
-            SceneLoader.LoadScene(currentScene);
+            SceneLoader.LoadScene(currentScene, level);
             SceneChanged?.Invoke();
         }
         public void QuitGame()

@@ -796,6 +796,11 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7144214070592351571, guid: 5bf184eaefb9bd843a1a978d1690d098,
+        type: 3}
+      propertyPath: level
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7869019671314549998, guid: 5bf184eaefb9bd843a1a978d1690d098,
         type: 3}
       propertyPath: m_Enabled
@@ -1175,9 +1180,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 3092159260562394749, guid: 1503a6a09a4ecf94e903f992c70ad5c3,
     type: 3}
-  windForceModifier: 1
-  bonusPerSecond: 0.2
-  spawnTimer: 8
+  windForceModifier: 0.5
+  bonusPerSecond: 0.05
+  spawnTimer: 7
   spawnTimerDecrease: 0.6
   minSpawnTime: 1
   xA: 7.5
@@ -1336,6 +1341,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989161804245124846, guid: af4c4175ba05c494e9210ca74c8b3185,
+        type: 3}
+      propertyPath: level
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2989161804245124850, guid: af4c4175ba05c494e9210ca74c8b3185,
         type: 3}
@@ -2996,8 +3006,8 @@ MonoBehaviour:
   windEmpty: {fileID: 1749274487}
   windPrefab: {fileID: 1179454896348021416, guid: 3babcd37f9132384e87140bfcb768ad3,
     type: 3}
-  maxWindPos: {x: 5, y: 3}
-  minWindPos: {x: -5, y: -1.5}
+  maxWindPos: {x: 7, y: 3.75}
+  minWindPos: {x: -7, y: -1.5}
   maxWindsInGame: 25
   winds: []
   windStart: {x: 0, y: 0}

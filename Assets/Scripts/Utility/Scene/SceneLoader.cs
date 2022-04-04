@@ -3,32 +3,39 @@
 namespace Universal.SceneManaging
 {
     public static class SceneLoader
-    {        
+    {
         public static Scenes GetCurrentScene()
         {
             Scene currentScene = SceneManager.GetActiveScene();
-            switch (currentScene.name)
+            if (currentScene.name.Contains("Gameplay"))
             {
-                case "Gameplay":
-                    return Scenes.gameplay;
-                case "Menu":
-                    return Scenes.menu;
-                case "Highscores":
-                    return Scenes.menu;
-                case "Credits":
-                    return Scenes.credits;
-                default:
-                    return Scenes.menu;
+                return Scenes.gameplay;
+            }
+            else if (currentScene.name.Contains("Menu"))
+            {
+                return Scenes.menu;
+            }
+            else if (currentScene.name.Contains("Highscores"))
+            {
+                return Scenes.highscores;
+            }
+            else if (currentScene.name.Contains("Credits"))
+            {
+                return Scenes.credits;
+            }
+            else
+            {
+                return Scenes.menu;
             }
         }
-        public static void LoadScene(Scenes sceneToLoad)
+        public static void LoadScene(Scenes sceneToLoad, int level = -1)
         {
             string sceneName = "ERROR";
 
             switch (sceneToLoad)
             {
                 case Scenes.gameplay:
-                    sceneName = "Gameplay";
+                    sceneName = LoadLevel(level);
                     break;
                 case Scenes.menu:
                     sceneName = "Menu";
@@ -44,6 +51,14 @@ namespace Universal.SceneManaging
             }
 
             ASyncSceneLoader.Get().StartLoad(sceneName);
+        }
+        static string LoadLevel(int level)
+        {
+            if (level < 0)
+            {
+                return "ERROR";
+            }
+            return "Gameplay Level " + level;
         }
     }
 }

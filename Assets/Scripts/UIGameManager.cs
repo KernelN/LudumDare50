@@ -13,7 +13,7 @@ namespace NAMESPACENAME
 
         public void LoadScene(Universal.SceneManaging.SceneGetter sceneGetter)
         {
-            gameManager.LoadScene(sceneGetter.scene);
+            gameManager.LoadScene(sceneGetter.scene, sceneGetter.level);
         }
         public void QuitGame()
         {

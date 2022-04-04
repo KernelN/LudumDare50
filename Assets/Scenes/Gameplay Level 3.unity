@@ -796,6 +796,11 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7144214070592351571, guid: 5bf184eaefb9bd843a1a978d1690d098,
+        type: 3}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7869019671314549998, guid: 5bf184eaefb9bd843a1a978d1690d098,
         type: 3}
       propertyPath: m_Enabled
@@ -1336,6 +1341,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989161804245124846, guid: af4c4175ba05c494e9210ca74c8b3185,
+        type: 3}
+      propertyPath: level
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2989161804245124850, guid: af4c4175ba05c494e9210ca74c8b3185,
         type: 3}
@@ -2996,9 +3006,9 @@ MonoBehaviour:
   windEmpty: {fileID: 1749274487}
   windPrefab: {fileID: 1179454896348021416, guid: 3babcd37f9132384e87140bfcb768ad3,
     type: 3}
-  maxWindPos: {x: 5, y: 3}
-  minWindPos: {x: -5, y: -1.5}
-  maxWindsInGame: 25
+  maxWindPos: {x: 7, y: 3.75}
+  minWindPos: {x: -7, y: -1.5}
+  maxWindsInGame: 40
   winds: []
   windStart: {x: 0, y: 0}
   windDirection: {x: 0, y: 0}

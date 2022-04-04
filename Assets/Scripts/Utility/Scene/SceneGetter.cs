@@ -6,5 +6,6 @@ namespace Universal.SceneManaging
 	public class SceneGetter : MonoBehaviour
 	{
 		public Scenes scene;
+		public int level = -1;
 	}
 }
