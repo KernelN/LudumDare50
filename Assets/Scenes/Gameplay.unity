@@ -922,6 +922,7 @@ MonoBehaviour:
   loseHeight: -5
   sendGameOverTimer: 1.5
   timer: 0
+  pause: 0
   gameOver: 0
 --- !u!4 &27748120
 Transform:
@@ -1042,7 +1043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
+  m_Color: {r: 0.764151, g: 0.43108454, b: 0, a: 0.84313726}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

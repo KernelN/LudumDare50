@@ -26,12 +26,14 @@ namespace NAMESPACENAME.Gameplay
             }
 
             //Link action
-            manager.PlayerLost += OnPotFalled;
+            manager.PlayerLost += OnPlayerLost;
+            manager.GamePaused += OnPause;
         }
         private void OnDestroy()
         {
             //Unlink action
-            manager.PlayerLost -= OnPotFalled;
+            manager.PlayerLost -= OnPlayerLost;
+            manager.GamePaused -= OnPause;
         }
 
         //Methods
@@ -75,7 +77,11 @@ namespace NAMESPACENAME.Gameplay
         }
 
         //Event receivers
-        void OnPotFalled()
+        void OnPause()
+        {
+            SetPause(manager.publicPause);
+        }
+        void OnPlayerLost()
         {
             SetGameOver();
         }
