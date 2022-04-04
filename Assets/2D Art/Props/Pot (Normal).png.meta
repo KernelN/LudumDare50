@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: da66dc1e5a9dcca43b073008101a109f
+guid: 8af921a79dad5fc40ae2aeb9727aeddd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -76,16 +76,14 @@ TextureImporter:
     sprites: []
     outline: []
     physicsShape:
-    - - {x: -108, y: 486.5}
-      - {x: -85, y: 50.5}
-      - {x: -282, y: -160.5}
-      - {x: -269, y: -396.5}
-      - {x: -166.5, y: -454}
-      - {x: 185.5, y: -453}
-      - {x: 264, y: -381.5}
-      - {x: 281, y: -158.5}
-      - {x: 276, y: 251.5}
-      - {x: 87, y: 482.5}
+    - - {x: -194.5, y: 501}
+      - {x: -210.5, y: -203}
+      - {x: -153.5, y: -471}
+      - {x: -77.5, y: -497}
+      - {x: 86.5, y: -494}
+      - {x: 162.5, y: -456}
+      - {x: 205.5, y: -197}
+      - {x: 201.5, y: 501}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
