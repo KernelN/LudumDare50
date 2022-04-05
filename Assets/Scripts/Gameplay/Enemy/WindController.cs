@@ -20,7 +20,6 @@ namespace Anemos.Gameplay
         public float stopWindTimer;
 
         public float elapsedTime;
-        public float elapsedStopTime;
 
         public System.Action WindStarted;
 

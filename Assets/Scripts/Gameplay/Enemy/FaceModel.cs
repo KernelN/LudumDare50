@@ -22,7 +22,11 @@ namespace Anemos.Gameplay
             if (isBlowing == false)
             {
                 FaceBlowingAnimation();
-            }          
+            }
+            if (controller.elapsedTime > controller.startWindTimer)
+            {
+                Destroy(gameObject);
+            }
         }
 
         void FaceBlowingAnimation()
