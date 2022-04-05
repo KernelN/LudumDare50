@@ -698,10 +698,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "GAME ART\nMaia Lucero (Artist)\nMartiniano Martin (Artist)\nLucas Qui\xF1ones
-    (Artist)\nZoe Oriana Torres (Artist)\n\nGAME AUDIO\nMat\xEDas Jara (Audio)\n\nGAME
-    DESIGN\nJoaquin Beccar Varela (Designer)\n\nGAME DEVELOPMENT\nDaniel Gianetto
-    (Developer)\nAlejandro Insausti (Developer)\n\n3RD PARTIES\nUnity Technologies
+  m_text: "GAME ART\nMaia Lucero\nMartiniano Martin\nLucas Qui\xF1ones\nZoe Oriana
+    Torres\n\nGAME AUDIO\nMat\xEDas Jara\n\nGAME DESIGN\nJoaquin Beccar Varela\n\nGAME
+    DEVELOPMENT\nDaniel Gianetto\nAlejandro Insausti\n\n3RD PARTIES\nUnity Technologies
     (Engine)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c099a368d8abb647825525b378443e8, type: 2}
@@ -1481,6 +1480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 1
+  level: -1
 --- !u!1001 &1349142411
 PrefabInstance:
   m_ObjectHideFlags: 0
