@@ -18,6 +18,7 @@ namespace Anemos.Gameplay
         [SerializeField] bool pause = false;
         [SerializeField] bool gameOver;
 
+        public Action MilestoneReached;
         public Action PlayerLost;
         public Action PotFalled;
         public Action GamePaused;
@@ -79,15 +80,16 @@ namespace Anemos.Gameplay
 
             //if timer bigger than 1, add 1 to score and reset timer
             Universal.Highscore.ScoreManager.Get().score = (int)timer * level;
+
+            //Check Milestone
+            if (timer < timeForNextLvl) return;
+            PlayerData playerData = GameManager.Get().playerData;
+            if (level != playerData.lastLevelUnlocked) return;
+            playerData.lastLevelUnlocked++;
+            MilestoneReached?.Invoke();
         }
         void GameOver()
         {
-            PlayerData playerData = GameManager.Get().playerData;
-            if (timer > timeForNextLvl && level == playerData.lastLevelUnlocked)
-            {
-                playerData.lastLevelUnlocked++;
-            }
-
             PlayerLost?.Invoke();
         }
     }

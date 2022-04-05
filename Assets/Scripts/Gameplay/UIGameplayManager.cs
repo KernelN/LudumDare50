@@ -5,11 +5,12 @@ namespace Anemos.Gameplay
     public class UIGameplayManager : MonoBehaviour
     {
         [System.Serializable]
-        enum GameplayScreens {  inGame, pause, gameOver, resetGame}
+        enum GameplayScreens {  inGame, milestone, pause, gameOver, resetGame}
 
         [Header("Set Values")]
         [SerializeField] GameplayManager manager;
         [SerializeField] GameObject inGameUI;
+        [SerializeField] GameObject milestoneUI;
         [SerializeField] GameObject pauseUI;
         [SerializeField] GameObject gameOverUI;
 
@@ -26,12 +27,14 @@ namespace Anemos.Gameplay
             }
 
             //Link action
+            manager.MilestoneReached += OnMilestoneReached;
             manager.PlayerLost += OnPlayerLost;
             manager.GamePaused += OnPause;
         }
         private void OnDestroy()
         {
             //Unlink action
+            manager.PlayerLost -= OnPlayerLost;
             manager.PlayerLost -= OnPlayerLost;
             manager.GamePaused -= OnPause;
         }
@@ -42,6 +45,13 @@ namespace Anemos.Gameplay
             GameManager.Get().SetPause(pause);
 
             currentState = pause ? GameplayScreens.pause : GameplayScreens.inGame;
+            SwitchUIStage();
+        }
+        void SetMilestone()
+        {
+            GameManager.Get().SetPause(true);
+
+            currentState = GameplayScreens.milestone;
             SwitchUIStage();
         }
         void SetGameOver()
@@ -57,7 +67,12 @@ namespace Anemos.Gameplay
             {
                 case GameplayScreens.inGame:
                     pauseUI.SetActive(false);
+                    milestoneUI.SetActive(false);
                     inGameUI.SetActive(true);
+                    break;
+                case GameplayScreens.milestone:
+                    inGameUI.SetActive(false);
+                    milestoneUI.SetActive(true);
                     break;
                 case GameplayScreens.pause:
                     inGameUI.SetActive(false);
@@ -77,6 +92,10 @@ namespace Anemos.Gameplay
         }
 
         //Event receivers
+        void OnMilestoneReached()
+        {
+            SetMilestone();
+        }
         void OnPause()
         {
             SetPause(manager.publicPause);
