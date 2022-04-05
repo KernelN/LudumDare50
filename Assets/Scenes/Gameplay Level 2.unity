@@ -2416,7 +2416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   inGameUI: {fileID: 590141461}
-  milestoneUI: {fileID: 0}
+  milestoneUI: {fileID: 1495277445}
   pauseUI: {fileID: 6109033}
   gameOverUI: {fileID: 257818165}
   currentState: 0
@@ -2752,6 +2752,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1495277445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3155145930280891293, guid: f29aad5af1beff345943b7f6d51e0d42,
+    type: 3}
+  m_PrefabInstance: {fileID: 2003308089}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1749274486
 GameObject:
   m_ObjectHideFlags: 0
