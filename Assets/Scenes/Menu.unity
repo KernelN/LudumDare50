@@ -317,7 +317,9 @@ PrefabInstance:
     - target: {fileID: 1603777451990115762, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_text
-      value: Offense
+      value: 'Act 1
+
+        Offense'
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115762, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
@@ -2230,7 +2232,9 @@ PrefabInstance:
     - target: {fileID: 1603777451990115762, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_text
-      value: Punishment
+      value: 'Act 2
+
+        Punishment'
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115762, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
@@ -2499,7 +2503,9 @@ PrefabInstance:
     - target: {fileID: 1603777451990115762, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_text
-      value: Challenge
+      value: 'Act 3
+
+        Challenge'
       objectReference: {fileID: 0}
     - target: {fileID: 1603777451990115762, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
