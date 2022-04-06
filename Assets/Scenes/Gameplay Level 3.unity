@@ -3242,7 +3242,7 @@ MonoBehaviour:
   windEmpty: {fileID: 1749274487}
   windPrefab: {fileID: 1179454896348021416, guid: 3babcd37f9132384e87140bfcb768ad3,
     type: 3}
-  maxWindPos: {x: 7, y: 3.75}
+  maxWindPos: {x: 7, y: 3.3}
   minWindPos: {x: -7, y: -1.5}
   maxWindsInGame: 40
   winds: []

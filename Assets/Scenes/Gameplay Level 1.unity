@@ -3098,7 +3098,7 @@ MonoBehaviour:
   windEmpty: {fileID: 1749274487}
   windPrefab: {fileID: 1179454896348021416, guid: 3babcd37f9132384e87140bfcb768ad3,
     type: 3}
-  maxWindPos: {x: 7, y: 3.75}
+  maxWindPos: {x: 7, y: 3.3}
   minWindPos: {x: -7, y: -1.5}
   maxWindsInGame: 25
   winds: []
@@ -3131,6 +3131,41 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 904146892}
+    - target: {fileID: 3155145930116831656, guid: f29aad5af1beff345943b7f6d51e0d42,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155145930116831656, guid: f29aad5af1beff345943b7f6d51e0d42,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155145930116831656, guid: f29aad5af1beff345943b7f6d51e0d42,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155145930116831656, guid: f29aad5af1beff345943b7f6d51e0d42,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -284.99466
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155145930116831656, guid: f29aad5af1beff345943b7f6d51e0d42,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -257.61572
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155145930116831656, guid: f29aad5af1beff345943b7f6d51e0d42,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155145930116831656, guid: f29aad5af1beff345943b7f6d51e0d42,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 3155145930280891292, guid: f29aad5af1beff345943b7f6d51e0d42,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3240,6 +3275,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Milestone Reached - Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155145930280891293, guid: f29aad5af1beff345943b7f6d51e0d42,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5111716917377540772, guid: f29aad5af1beff345943b7f6d51e0d42,
         type: 3}

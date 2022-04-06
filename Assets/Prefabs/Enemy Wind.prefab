@@ -220,7 +220,6 @@ MonoBehaviour:
   startWindTimer: 1.5
   stopWindTimer: 4
   elapsedTime: 0
-  elapsedStopTime: 0
 --- !u!82 &8557213363945735417
 AudioSource:
   m_ObjectHideFlags: 0
@@ -449,3 +448,4 @@ MonoBehaviour:
   windAnimator: {fileID: 5034130943609874341}
   windStartedBlowing: 0
   controller: {fileID: 0}
+  startWindAnimationMod: -1

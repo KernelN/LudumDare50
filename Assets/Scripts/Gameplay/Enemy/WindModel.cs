@@ -12,6 +12,8 @@ namespace Anemos.Gameplay
 
         public WindController controller;
 
+        [SerializeField] float startWindAnimationMod;
+
         void Start()
         {
             controller = transform.parent.GetComponent<WindController>();
@@ -27,7 +29,7 @@ namespace Anemos.Gameplay
 
         void StarBlowAnimation()
         {
-            if(controller.elapsedTime > controller.startWindTimer)
+            if (controller.elapsedTime > controller.startWindTimer + startWindAnimationMod)
             {
                 windAnimator.SetTrigger("windBlowing");
                 windStartedBlowing = true;
