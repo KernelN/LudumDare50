@@ -1263,8 +1263,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 3092159260562394749, guid: 1503a6a09a4ecf94e903f992c70ad5c3,
     type: 3}
-  windForceModifier: 0.75
+  windForceModifier: 0.5
   bonusPerSecond: 0.1
+  firstSpawnTimer: 3
   spawnTimer: 8
   spawnTimerDecrease: 0.5
   minSpawnTime: 1.5

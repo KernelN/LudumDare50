@@ -11,6 +11,7 @@ namespace Anemos.Gameplay
         public float windForceModifier;
         public float bonusPerSecond;
 
+        [SerializeField] float firstSpawnTimer = 3;
         public float spawnTimer;
         public float spawnTimerDecrease;
         public float minSpawnTime;
@@ -26,6 +27,7 @@ namespace Anemos.Gameplay
         void Start()
         {
             spawnResetValue = spawnTimer;
+            spawnTimer = firstSpawnTimer;
         }
 
         void Update()
