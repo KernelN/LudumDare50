@@ -10,11 +10,12 @@ namespace Anemos.Gameplay
 
         public AreaEffector2D effector;
 
+        public float windForce;
         public float initialWindForce;
         public float finalWindForce;
         public float windForceTimer;
 
-        public float windForce;
+        public float windForceMod;
 
         public float startWindTimer;
         public float stopWindTimer;
@@ -64,12 +65,14 @@ namespace Anemos.Gameplay
 
         void IncrementWindForce()
         {
-            effector.forceVariation = initialWindForce * windForce;
+            //Force equals initial + ((final - initial) * time)^modifier
+            //initial is the min force, final is the max force without the mod
 
-            if (elapsedTime > windForceTimer)
-            {
-                effector.forceVariation = finalWindForce * windForce;
-            }
+            windForce = initialWindForce;
+            windForce += (finalWindForce - initialWindForce) * elapsedTime / windForceTimer;
+            windForce = Mathf.Pow(windForce, 1 + windForceMod);
+            
+            effector.forceVariation = windForce;
         }
 
         void AdvanceTimer()

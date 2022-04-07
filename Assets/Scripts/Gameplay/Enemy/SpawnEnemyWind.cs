@@ -75,7 +75,7 @@ namespace Anemos.Gameplay
                 GameObject newEnemyWind = (GameObject)Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
                 newEnemyWind.transform.Rotate(0, spawnRotation, 0);
                 newEnemyWind.GetComponent<WindController>().windAngle = windAngle;
-                newEnemyWind.GetComponent<WindController>().windForce = windForceModifier;
+                newEnemyWind.GetComponent<WindController>().windForceMod = windForceModifier;
 
                 spawnResetValue -= spawnTimerDecrease;
                 spawnTimer = spawnResetValue;
