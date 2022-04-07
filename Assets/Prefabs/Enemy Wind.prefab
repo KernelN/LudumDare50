@@ -213,12 +213,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effector: {fileID: 3092159260562394747}
-  initialWindForce: 0
-  finalWindForce: 5
-  windForceTimer: 1
   windForce: 0
-  startWindTimer: 1.5
-  stopWindTimer: 4
+  initialWindForce: 0
+  finalWindForce: 3
+  windForceTimer: 1
+  windForceMod: 0
+  startWindTimer: 2
+  stopWindTimer: 2
   elapsedTime: 0
 --- !u!82 &8557213363945735417
 AudioSource:

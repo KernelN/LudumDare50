@@ -1248,7 +1248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &240737980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1263,8 +1263,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 3092159260562394749, guid: 1503a6a09a4ecf94e903f992c70ad5c3,
     type: 3}
-  windForceModifier: 0.5
+  windForceModifier: 0.25
   bonusPerSecond: 0.05
+  firstSpawnTimer: 3
   spawnTimer: 7
   spawnTimerDecrease: 0.7
   minSpawnTime: 1
@@ -3081,6 +3082,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadScene
       objectReference: {fileID: 0}
+    - target: {fileID: 3155145930116831656, guid: f29aad5af1beff345943b7f6d51e0d42,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000061035156
+      objectReference: {fileID: 0}
     - target: {fileID: 3155145930280891292, guid: f29aad5af1beff345943b7f6d51e0d42,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3243,7 +3249,7 @@ MonoBehaviour:
   windPrefab: {fileID: 1179454896348021416, guid: 3babcd37f9132384e87140bfcb768ad3,
     type: 3}
   maxWindPos: {x: 7, y: 3.3}
-  minWindPos: {x: -7, y: -1.5}
+  minWindPos: {x: -7, y: -2}
   maxWindsInGame: 25
   winds: []
   windStart: {x: 0, y: 0}
