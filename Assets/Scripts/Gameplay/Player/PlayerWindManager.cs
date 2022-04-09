@@ -13,6 +13,7 @@ namespace Anemos.Gameplay
         [SerializeField] Vector2 minWindPos;
         [SerializeField] Vector2 windPotDistance;
         [SerializeField] int maxWindsInGame;
+        [SerializeField] bool useFixedSpawn;
         
         [Header("Runtime Values")]
         [SerializeField] List<Transform> winds;
@@ -35,13 +36,20 @@ namespace Anemos.Gameplay
             
             if (Input.GetMouseButtonDown(0))
             {
-                AddWindStartPos();
+                if (useFixedSpawn)
+                {
+                    AddFixedWindPos();
+                }
+                else
+                {
+                    AddCustomWindPos();
+                }
                 AddWindDirection();
             }
         }
 
         //Methods
-        void AddWindStartPos()
+        void AddFixedWindPos()
         {
             //Get Start of Drag mouse position
             windStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -56,17 +64,22 @@ namespace Anemos.Gameplay
                 windStart.x = -windPotDistance.x;
             }
             windStart.y = pot.position.y + windPotDistance.y;
+        }
+        void AddCustomWindPos()
+        {
+            //Get Start of Drag mouse position
+            windStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            ////Check if wind is inside range
-            //if(windStart.y > maxWindPos.y || windStart.y < minWindPos.y)
-            //{
-            //    windStartFailed = true;
-            //}
-            //if (windStart.x > maxWindPos.x || windStart.x < minWindPos.x)
-            //{
-            //    windStartFailed = true;
-            //}
-            //Debug.Log("Start Drag - " + windStart);
+            //Check if wind is inside range
+            if (windStart.y > maxWindPos.y || windStart.y < minWindPos.y)
+            {
+                windStartFailed = true;
+            }
+            if (windStart.x > maxWindPos.x || windStart.x < minWindPos.x)
+            {
+                windStartFailed = true;
+            }
+            Debug.Log("Start Drag - " + windStart);
         }
         void AddWindDirection()
         {

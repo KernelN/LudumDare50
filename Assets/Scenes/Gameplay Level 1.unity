@@ -3121,8 +3121,9 @@ MonoBehaviour:
     type: 3}
   maxWindPos: {x: 7, y: 3.3}
   minWindPos: {x: -7, y: -1.5}
-  windPotDistance: {x: 1, y: -0.5}
+  windPotDistance: {x: 1, y: -0.25}
   maxWindsInGame: 25
+  useFixedSpawn: 0
   winds: []
   windStart: {x: 0, y: 0}
   windDirection: {x: 0, y: 0}
