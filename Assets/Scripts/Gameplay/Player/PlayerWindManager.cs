@@ -11,6 +11,7 @@ namespace Anemos.Gameplay
         [SerializeField] GameObject windPrefab;
         [SerializeField] Vector2 maxWindPos;
         [SerializeField] Vector2 minWindPos;
+        [SerializeField] Vector2 windPotDistance;
         [SerializeField] int maxWindsInGame;
         
         [Header("Runtime Values")]
@@ -45,14 +46,26 @@ namespace Anemos.Gameplay
             //Get Start of Drag mouse position
             windStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if(windStart.y > maxWindPos.y || windStart.y < minWindPos.y)
+            //Set Wind position
+            if (windStart.x > 0)
             {
-                windStartFailed = true;
+                windStart.x = windPotDistance.x;
             }
-            if (windStart.x > maxWindPos.x || windStart.x < minWindPos.x)
+            else
             {
-                windStartFailed = true;
+                windStart.x = -windPotDistance.x;
             }
+            windStart.y = pot.position.y + windPotDistance.y;
+
+            ////Check if wind is inside range
+            //if(windStart.y > maxWindPos.y || windStart.y < minWindPos.y)
+            //{
+            //    windStartFailed = true;
+            //}
+            //if (windStart.x > maxWindPos.x || windStart.x < minWindPos.x)
+            //{
+            //    windStartFailed = true;
+            //}
             //Debug.Log("Start Drag - " + windStart);
         }
         void AddWindDirection()
